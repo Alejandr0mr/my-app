@@ -1,3 +1,46 @@
 [
-
+    {
+        "id": 1,
+        "nombres": "Alejandro",
+        "apellidos": "Martinez",
+        "identificacion": "12132",
+        "direccion": "Pereira",
+        "telefono": "3046530494",
+        "email": "tortugal2004@gmail.com",
+        "password": "121",
+        "fecha_creación": "2024-02-21T20:45:57.139Z"
+    },
+    {
+        "id": 2,
+        "nombres": "Alejandro",
+        "apellidos": "Martinez",
+        "identificacion": "121321",
+        "direccion": "Pereira casa 57 dos",
+        "telefono": "3046530494",
+        "email": "tortugal2004@gmail.com",
+        "password": "Alejandro1*",
+        "fecha_creación": "2024-02-21T21:14:44.082Z"
+    },
+    {
+        "id": 3,
+        "nombres": "Alejandro",
+        "apellidos": "Martinez",
+        "identificacion": "1089931128",
+        "direccion": "Pereira casa 57 dos",
+        "telefono": "3046530494",
+        "email": "tortugal2004@gmail.com",
+        "password": "Alejandro1*",
+        "fecha_creación": "2024-02-21T21:17:18.071Z"
+    },
+    {
+        "id": 4,
+        "nombres": "Alejandro",
+        "apellidos": "Maa",
+        "identificacion": "1089931128",
+        "direccion": "Pereira casa 57 dos",
+        "telefono": "3046530494",
+        "email": "tortugal2004@gmail.com",
+        "password": "Alejandro1*",
+        "fecha_creación": "2024-02-21T21:18:27.242Z"
+    }
 ]
