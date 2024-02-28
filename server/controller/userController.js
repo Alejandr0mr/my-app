@@ -10,6 +10,18 @@ const controller = {
             const usersData = await fs.readFile(userFilePath, 'utf-8');
             const users = JSON.parse(usersData);
 
+            // Verificar si el correo electrónico ya está registrado
+            const emailExists = users.some(user => user.email === req.body.email);
+            if (emailExists) {
+                return res.status(400).send('El correo electrónico ya está registrado');
+            }
+
+            // Verificar si el número de identificación ya está registrado
+            const idExists = users.some(user => user.identificacion === req.body.identificacion);
+            if (idExists) {
+                return res.status(400).send('El número de identificación ya está registrado');
+            }
+
             const ultimo = users.length;
             const usuarioNuevo = {
                 id: ultimo + 1,

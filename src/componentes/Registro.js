@@ -129,7 +129,9 @@ function Registro() {
     
         // Verificar si hay algún mensaje de error en el estado 'errors'
         const isError = Object.values(errors).some(error => error !== "");
-        const isEmpty = Object.values(values).some(value => value.trim() === "");
+            // Verificar si hay algún campo vacío
+    const isEmpty = Object.values(values).some(value => value.trim() === "");
+
     
         // Si no hay errores, enviar los datos
         if (!isError && !isEmpty ) {
@@ -152,13 +154,13 @@ function Registro() {
                 } else {
                     Swal.fire({
                         title: 'No fue posible crear el usuario',
-                        text: `Error: ${response.status}`,
+                        text: `Error: ${response.status} - Correo o identificación invalidas`,
                         icon: 'error',
                         customClass: {
                             popup: 'my-custom-popup-class',
                         },
-                        showConfirmButton: false,
-                        timer: 1500
+                        showConfirmButton: true,
+                        timer: 4500
                     });
                 }
             })
