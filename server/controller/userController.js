@@ -15,11 +15,14 @@ const controller = {
                 id: ultimo + 1,
                 nombres: req.body.nombres,
                 apellidos: req.body.apellidos,
-                identificacion: req.body.identificacion,
-                direccion: req.body.direccion,
-                telefono: req.body.telefono,
                 email: req.body.email,
                 password: req.body.password,
+                direccion: req.body.direccion,
+                identificacion: req.body.identificacion,
+                telefono: req.body.telefono,
+                genero: req.body.genero,
+                ciudadNacimiento: req.body.ciudadNacimiento,
+                fechaNacimiento: req.body.fechaNacimiento,
                 fecha_creación: new Date()
             };
 
