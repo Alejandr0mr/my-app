@@ -14,11 +14,15 @@ function UsuariosRegistrados() {
                 <table className="table mt-5 shadow-lg">
                     <thead class="table-dark">
                         <tr>
+                            <th scope="col">id</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
+                            <th scope="col">identificacion</th>
                             <th scope="col">Email</th>
                             <th scope="col">Direccion</th>
                             <th scope="col">Teléfono</th>
+                            <th scope="col">Fecha de creación</th>
+                            <th scope="col">Acciones</th>
                             
                         </tr>
                     </thead>    
@@ -26,12 +30,19 @@ function UsuariosRegistrados() {
 
                         {usuarios.map(user => {
                             return (
-                                <tr scope="row" key={user.nombres}>
+                                <tr scope="row" key={user.id}>
+                                    <td>{user.id}</td>
                                     <td>{user.nombres}</td>
                                     <td>{user.apellidos}</td>
+                                    <td>{user.identificacion}</td>
                                     <td>{user.email}</td>
                                     <td>{user.direccion}</td>
                                     <td>{user.telefono}</td>
+                                    <td>{user.fecha_creación}</td>
+                                    <td>
+                                        <button className="btn btn-primary">Editar</button>
+                                        <button className="btn btn-danger">Eliminar</button>
+                                    </td>
                                 </tr>
                             );
                         })}
