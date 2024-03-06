@@ -40,8 +40,10 @@ function UsuariosRegistrados() {
                                     <td>{user.telefono}</td>
                                     <td>{user.fecha_creación}</td>
                                     <td>
-                                        <button className="btn btn-primary">Editar</button>
-                                        <button className="btn btn-danger">Eliminar</button>
+                                        <tr>
+                                        <td><button className="btn btn-primary">Editar</button></td>
+                                        <td><button className="btn btn-danger">Eliminar</button></td>
+                                        </tr>
                                     </td>
                                 </tr>
                             );
