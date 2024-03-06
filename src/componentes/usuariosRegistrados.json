@@ -26,5 +26,19 @@
         "ciudadNacimiento": "Valledupar",
         "fechaNacimiento": "1111-11-11",
         "fecha_creación": "2024-03-06T19:13:03.862Z"
+    },
+    {
+        "id": 3,
+        "nombres": "Jhon",
+        "apellidos": "Henao",
+        "email": "a@a.com",
+        "password": "Alejandro1*",
+        "direccion": "Pereiraasassasa",
+        "identificacion": "121321",
+        "telefono": "3046530494",
+        "genero": "masculino",
+        "ciudadNacimiento": "Armenia",
+        "fechaNacimiento": "0011-11-11",
+        "fecha_creación": "2024-03-06T20:31:45.848Z"
     }
 ]
