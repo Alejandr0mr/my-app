@@ -1,22 +1,27 @@
 import React from "react";
-
+import Header from './header/Header'
+import Footer from './footer/Footer'
 import usuarios from './usuariosRegistrados.json'
 
 function UsuariosRegistrados() {
 
     return (
         <div>
+            <Header/>
+
             <div className="container">
-                <table class="table">
-                    <thead>
+            <h1 className="display-4 mt-3 text-center">Usuarios Registrados</h1> 
+                <table className="table mt-5 shadow-lg">
+                    <thead class="table-dark">
                         <tr>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
                             <th scope="col">Email</th>
                             <th scope="col">Direccion</th>
                             <th scope="col">Teléfono</th>
+                            
                         </tr>
-                    </thead>
+                    </thead>    
                     <tbody>
 
                         {usuarios.map(user => {
@@ -36,6 +41,8 @@ function UsuariosRegistrados() {
                 </table>
 
             </div>
+
+            <Footer/>
         </div>
     )
 

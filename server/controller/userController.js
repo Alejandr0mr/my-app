@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-const userFilePath = path.join(__dirname, '../../sr/componentes/usuariosRegistrados.json');
+const userFilePath = path.join(__dirname, '../../src/componentes/usuariosRegistrados.json');
 
 const controller = {
     register: async function (req, res) {

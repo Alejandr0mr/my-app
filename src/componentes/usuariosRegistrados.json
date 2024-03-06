@@ -12,5 +12,19 @@
         "ciudadNacimiento": "Pereira",
         "fechaNacimiento": "1111-11-11",
         "fecha_creación": "2024-02-28T20:07:58.514Z"
+    },
+    {
+        "id": 2,
+        "nombres": "Alejandro",
+        "apellidos": "Martínez",
+        "email": "diego@gmail.com",
+        "password": "Alejandr0**",
+        "direccion": "Pereira casa 57 dos",
+        "identificacion": "1089931129",
+        "telefono": "3046530494",
+        "genero": "masculino",
+        "ciudadNacimiento": "Valledupar",
+        "fechaNacimiento": "1111-11-11",
+        "fecha_creación": "2024-03-06T19:13:03.862Z"
     }
 ]

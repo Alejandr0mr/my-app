@@ -17,39 +17,39 @@ function Header() {
                                 <a className="nav-link active" aria-current="page" href="#">Inicio</a>
                             </li>
 
-                            <Link to='/tutoriales'>
+                            <Link to='/tutoriales'  className="text-decoration-none">
                             <li className="nav-item">
                                 <a className="nav-link" >Tutoriales</a>
                             </li>
                             </Link>
-                            <Link to='/referencias'>
+                            <Link to='/referencias' className="text-decoration-none">
                             <li className="nav-item">
                                 <a className="nav-link">Referencias</a>
                             </li>
                             </Link>
-                            <Link to='/recursos'>
+                            <Link to='/recursos' className="text-decoration-none">
                             <li className="nav-item">
                                 <a className="nav-link">Recursos</a>
                             </li>
                             </Link>
-                            <Link to='/contacto'>
+                            <Link to='/contacto' className="text-decoration-none">
                             <li className="nav-item">
                                 <a className="nav-link">Contacto</a>
                             </li>
                             </Link>
-                            <Link to='/registro'>
+                            <Link to='/registro' className="text-decoration-none">
                                 <li className="nav-item">
 
                                     <a className="nav-link">Registrarse</a>
                                 </li>
                             </Link>
-                            <Link to='/login'>
+                            <Link to='/login' className="text-decoration-none">
                             <li className="nav-item">
                                 <a className="nav-link ">Iniciar sesión</a>
                             </li>
                             </Link>
 
-                            <Link to='/usuarios-registrados'>
+                            <Link to='/usuarios-registrados' className="text-decoration-none">
                             <li className="nav-item">
                                 <a className="nav-link">Ver usuarios</a>
                             </li>
