@@ -19,33 +19,39 @@ function Header() {
 
                             <Link to='/tutoriales'>
                             <li className="nav-item">
-                                <a className="nav-link active" >Tutoriales</a>
+                                <a className="nav-link" >Tutoriales</a>
                             </li>
                             </Link>
                             <Link to='/referencias'>
                             <li className="nav-item">
-                                <a className="nav-link active">Referencias</a>
+                                <a className="nav-link">Referencias</a>
                             </li>
                             </Link>
                             <Link to='/recursos'>
                             <li className="nav-item">
-                                <a className="nav-link active">Recursos</a>
+                                <a className="nav-link">Recursos</a>
                             </li>
                             </Link>
                             <Link to='/contacto'>
                             <li className="nav-item">
-                                <a className="nav-link active">Contacto</a>
+                                <a className="nav-link">Contacto</a>
                             </li>
                             </Link>
                             <Link to='/registro'>
                                 <li className="nav-item">
 
-                                    <a className="nav-link active">Registrarse</a>
+                                    <a className="nav-link">Registrarse</a>
                                 </li>
                             </Link>
                             <Link to='/login'>
                             <li className="nav-item">
-                                <a className="nav-link active">Iniciar sesión</a>
+                                <a className="nav-link ">Iniciar sesión</a>
+                            </li>
+                            </Link>
+
+                            <Link to='/usuarios-registrados'>
+                            <li className="nav-item">
+                                <a className="nav-link">Ver usuarios</a>
                             </li>
                             </Link>
                         </ul>

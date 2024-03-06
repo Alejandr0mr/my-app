@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Footer from './footer/Footer';
 import Header from './header/Header';
 import Swal from 'sweetalert2';
@@ -38,6 +38,8 @@ function Registro() {
         ciudadNacimiento: "",
         fechaNacimiento: ""
     });
+
+    const form = useRef();
 
     // Nuevo estado para controlar la visibilidad de la contraseña
     const [showPassword, setShowPassword] = useState(false);
@@ -151,6 +153,7 @@ function Registro() {
                         showConfirmButton: false,
                         timer: 1500
                     });
+                    form.current.reset()
                 } else {
                     Swal.fire({
                         title: 'No fue posible crear el usuario',
@@ -194,7 +197,7 @@ function Registro() {
         <div>
             <Header />
             <div className="container my-5 py-5">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} ref={form}>
                     <div className="form-row">
                         <div className="form-group col-md-6">
                             <label htmlFor="inputNombre">Nombre</label>

@@ -8,6 +8,7 @@ import Referencias from './componentes/Referencias';
 import Recursos from './componentes/Recursos';
 import Contacto from './componentes/Contacto';
 import Login from './componentes/Login';
+import UsuariosRegistrados from './componentes/UsuariosRegistrados';
 
 
 
@@ -25,6 +26,8 @@ function Router() {
         <Route exact path="/recursos" element={<Recursos/>}/>
         <Route exact path="/contacto" element={<Contacto/>}/>
         <Route exact path="/login" element={<Login/>}/>
+        <Route exact path="/usuarios-registrados" element={<UsuariosRegistrados/>}/>
+
       </Routes>
 
     </HashRouter>
