@@ -57,7 +57,7 @@ function Contacto() {
                             </form>
 
                             <div class="text-center text-md-left">
-                                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Enviar</a>
+                                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();" href='https://wa.link/oyhp7z' >Enviar</a>
                             </div>
                             <div class="status"></div>
                         </div>
