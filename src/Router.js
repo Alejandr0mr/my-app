@@ -10,6 +10,7 @@ import Contacto from './componentes/Contacto';
 import Login from './componentes/Login';
 import UsuariosRegistrados from './componentes/UsuariosRegistrados';
 import Slider from './componentes/slider/slider';
+import InicioSesionIniciada from './componentes/InicioSesionIniciada';
 
 
 
@@ -30,6 +31,7 @@ function Router() {
         <Route exact path="/login" element={<Login/>}/>
         <Route exact path="/usuarios-registrados" element={<UsuariosRegistrados/>}/>
         <Route exact path="/slider" element={<Slider/>}/>
+        <Route exact path = '/sesion' element={<InicioSesionIniciada/>}/>
   
       </Routes>
 

@@ -8,14 +8,14 @@ app.use(express.json())
 app.use(bodyParser.json())
 app.use(cors())
 
+
 app.get("/", (req, res) => {
     res.send(userJSON)
 })
 
-
-const userRegister = require ("./controller/userController")
-app.use('/registro-usuario',userRegister.register)
-
+const user = require ("./controller/userController")
+app.use('/registro-usuario',user.register)
+app.use('/login',user.login)
 
 
 const PORT = 3001

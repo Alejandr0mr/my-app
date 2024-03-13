@@ -1,8 +1,100 @@
-import React from 'react'
+
 import Header from './header/Header'
 import Footer from './footer/Footer'
+import React, { useEffect, useState } from 'react';
+import Cookies from 'universal-cookie' //https://www.npmjs.com/package/universal-cookie
+import Swal from 'sweetalert2';
 
 function Login() {
+
+    const cookies = new Cookies()
+    const [errorEmail, setErrorEmail] = useState(false)
+    const [errorPassword, setErrorPassword] = useState(false)
+    //const [userName, setUserName] = useState("")
+    const [showPassword, setShowPassword] = useState(true)
+
+    const [values, setValues] = useState({
+        email: "",
+        password: "",
+    })
+    //Guarda en la variable newValues los valores ingresados en el formulario de sesión
+    const handleChange = (e) => {        
+        const { name, value } = e.target
+        const newValues = {
+            ...values,
+            [name]: value,
+        }
+        setValues(newValues)
+    }
+    
+
+    const handleClickPassword = (e) => {
+        setErrorPassword(false)
+    }
+
+    const handleClickEmail = (e) => {
+        setErrorEmail(false)
+    }
+
+    const handleShowPassword = (e) => {
+        setShowPassword(!showPassword)
+    }
+
+    const iniciarSesion = (e) => {
+        e.preventDefault()
+        console.log(values.email, values.password)
+        
+        if (values.password.length === 0 && values.email.length === 0) {
+            setErrorEmail(true)
+            setErrorPassword(true)
+            return
+        }
+        if (values.password.length === 0) {
+            setErrorPassword(true)
+            return
+        }
+        if (values.email.length === 0) {
+            setErrorEmail(true)
+            return
+        }
+        fetch("http://localhost:3001/login",{
+            method: 'POST',
+            headers:{"Content-Type":"Application/json","Acept":"application/json"},
+            body:JSON.stringify(values)
+        })
+        .then(response => {           
+            if(response.status === 200) {
+                cookies.set('email',values.email,{
+                    secure:true,
+                    sameSite:'None',
+                    path:'/'
+                })
+                window.location.hash = '/sesion'
+            }
+            else{
+                console.log("sdfd" ,response.status)
+                Swal.fire({
+                    title:"Las credenciales ingresadas no son correctas",
+                    icon: "error"
+                })
+                window.location.hash = '/login'
+            }
+        })
+        .catch(()=> Swal.fire({
+            title:"No se puede iniciar sesión por un problema en el servidor",
+            icon:"error"
+        }),
+        window.location.hash = '/login'
+        )
+    }
+
+    //Si ya se inició sesión y escriben en la barra de direcciones '/login' entonces lo redirige al componente InicioSesionIniciada.
+    useEffect(()=>{
+        if(cookies.get('email')){
+            window.location.hash = '/sesion'
+        }
+    })
+
     return (
         <div>
             <Header />
@@ -14,7 +106,7 @@ function Login() {
                                     class="img-fluid" alt="Sample image" />
                             </div>
                             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                                <form>
+                                <form onSubmit={iniciarSesion}>
                                     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                                         <p class="lead fw-normal mb-0 me-3">Sign in with</p>
                                         <button type="button" class="btn btn-primary btn-floating mx-1">
@@ -35,14 +127,15 @@ function Login() {
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="form3Example3" class="form-control form-control-lg"
-                                            placeholder="Enter a valid email address" />
+                                    <input type="email" id="typeEmailX-2" className="form-control form-control-lg" name='email' onChange={handleChange} onClick={handleClickEmail}/>
+                                            {errorEmail ? <p>Debe ingresar un email</p> : ""}
+
                                         <label class="form-label" for="form3Example3">Email address</label>
                                     </div>
 
                                     <div class="form-outline mb-3">
-                                        <input type="password" id="form3Example4" class="form-control form-control-lg"
-                                            placeholder="Enter password" />
+                                         <input type="password" id="typePasswordX-2" className="form-control form-control-lg" name='password' onChange={handleChange} onClick={handleClickPassword}/>
+                                            {errorPassword ? <p>Debe ingresar una contraseña</p> : ""}
                                         <label class="form-label" for="form3Example4">Password</label>
                                     </div>
 
@@ -57,8 +150,7 @@ function Login() {
                                     </div>
 
                                     <div class="text-center text-lg-start mt-4 pt-2">
-                                        <button type="button" class="btn btn-primary btn-lg"
-                                            >Login</button>
+                                    <button className="btn btn-primary btn-lg btn-block" type="submit">Login</button>
                                         <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
                                             class="link-danger">Register</a></p>
                                     </div>
